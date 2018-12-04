@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+{% block content %}
+{% for i in data %}
+<div class="row">
+    <div class="col-xs-2">
+        <a href="/blog/{{ i.id }}"><h3>{{ i.id }}. {{ i.title }}</h3></a>
+    </div>
+    <div class="col-xs-1">
+        <br>
+        <form action="" method="post" novalidate>
+            {% csrf_token %}
+            <input type="submit" value="Update">
+        </form>
+    </div>
+    <div class="col-xs-1">
+        <br>
+        <form action="" method="post" novalidate>
+            {% csrf_token %}
+            <input type="submit" value="Delete">
+        </form>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
